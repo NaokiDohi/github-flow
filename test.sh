@@ -1,4 +1,4 @@
-#!usr/bin/env bash
+#!usr/bin/bash
 
 echo 'Testing..'
 grep -w workflows README.md
