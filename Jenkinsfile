@@ -16,12 +16,20 @@ pipeline {
                 sh './test.sh'
             }
         }
-        stage('Deploy') { 
+        stage('Deploy to staging') { 
+            when {
+                branch 'dev'
+            }
+            steps {
+                echo 'Deploying to staging'
+            }
+        }
+        stage('Deploy to production') { 
             when {
                 branch 'main'
             }
             steps {
-                echo 'Deploying..'
+                echo 'Deploying to production'
             }
         }
     }
